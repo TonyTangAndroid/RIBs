@@ -53,7 +53,7 @@ def build = [
     errorProneCore: "com.google.errorprone:error_prone_core:${versions.errorProne}",
     errorProneTestHelpers: "com.google.errorprone:error_prone_test_helpers:${versions.errorProne}",
     gradlePlugins: [
-        android: 'com.android.tools.build:gradle:2.3.1',
+        android: 'com.android.tools.build:gradle:2.3.2',
         errorprone: 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.11'
     ]
 ]
