@@ -62,6 +62,13 @@ public abstract class Interactor<P, R extends Router>
 
   @Nullable private R router;
 
+  public Interactor() {
+  }
+
+  Interactor(P presenter) {
+    this.presenter = presenter;
+  }
+
   /** @return the router for this interactor. */
   public R getRouter() {
     if (router == null) {
