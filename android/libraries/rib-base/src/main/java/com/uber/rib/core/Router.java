@@ -59,7 +59,9 @@ public class Router<I extends com.uber.rib.core.Interactor, C extends Interactor
     this.interactor = interactor;
     this.ribRefWatcher = ribRefWatcher;
     this.mainThread = mainThread;
-    component.inject(interactor);
+    if (component != null) {
+      component.inject(interactor);
+    }
     interactor.setRouter(this);
   }
 
@@ -241,7 +243,7 @@ public class Router<I extends com.uber.rib.core.Interactor, C extends Interactor
     }
   }
 
-  private static Thread getMainThread() {
+  static Thread getMainThread() {
     try {
       return Looper.getMainLooper().getThread();
     } catch (Exception e) {
